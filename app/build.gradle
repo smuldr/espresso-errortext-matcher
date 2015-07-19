@@ -10,6 +10,7 @@ android {
     targetSdkVersion 22
     versionCode 1
     versionName "1.0"
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
   }
   buildTypes {
     release {
@@ -17,9 +18,17 @@ android {
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
   }
+  packagingOptions {
+    exclude 'LICENSE.txt'
+  }
+}
+
+configurations.all {
+  resolutionStrategy.force 'com.android.support:support-annotations:22.2.1'
 }
 
 dependencies {
   compile 'com.android.support:appcompat-v7:22.2.1'
-  compileAndroidTest 'com.support.'
+  androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2'
+  androidTestCompile 'com.android.support.test:runner:0.3'
 }

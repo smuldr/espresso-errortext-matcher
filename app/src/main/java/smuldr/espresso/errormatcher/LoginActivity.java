@@ -1,4 +1,4 @@
-package smuldr.espressoerrormatcher;
+package smuldr.espresso.errormatcher;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
